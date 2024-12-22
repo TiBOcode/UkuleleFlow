@@ -150,7 +150,23 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"notes": {
+		"flows": {
+"flow1.md": {
+	id: "flow1.md";
+  slug: "flow1";
+  body: string;
+  collection: "flows";
+  data: any
+} & { render(): Render[".md"] };
+"less-is-more.md": {
+	id: "less-is-more.md";
+  slug: "less-is-more";
+  body: string;
+  collection: "flows";
+  data: any
+} & { render(): Render[".md"] };
+};
+"notes": {
 "a-flow-is-a-story.md": {
 	id: "a-flow-is-a-story.md";
   slug: "a-flow-is-a-story";
@@ -175,6 +191,13 @@ declare module 'astro:content' {
 "mindful-music-making.md": {
 	id: "mindful-music-making.md";
   slug: "mindful-music-making";
+  body: string;
+  collection: "notes";
+  data: any
+} & { render(): Render[".md"] };
+"trust-the-process.md": {
+	id: "trust-the-process.md";
+  slug: "trust-the-process";
   body: string;
   collection: "notes";
   data: any
