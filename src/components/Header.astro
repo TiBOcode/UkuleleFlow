@@ -23,7 +23,6 @@
     </nav>
   </div>
 </header>
-
 <style>
   .header {
     padding: 1.5rem 0;
@@ -32,53 +31,45 @@
     top: 0;
     z-index: 100;
   }
-
   .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
   .logo a {
     text-decoration: none;
     color: var(--text-primary);
   }
-
   .logo h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; 
     font-weight: 700;
     background: var(--orange-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: -0.5rem;
   }
-
   .subtitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem; 
     color: var(--text-secondary);
     font-weight: 400;
   }
-
   .nav-links {
     display: flex;
     gap: 2rem;
     list-style: none;
   }
-
   .nav-links a {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 600;
     transition: color 0.2s;
   }
-
   .nav-links a:hover {
     color: #FF5733;
   }
-
   .menu-toggle {
     display: none;
   }
-
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;
@@ -87,7 +78,6 @@
       cursor: pointer;
       padding: 0.5rem;
     }
-
     .menu-toggle span {
       display: block;
       width: 25px;
@@ -96,7 +86,6 @@
       margin: 5px 0;
       transition: 0.3s;
     }
-
     .nav-links {
       display: none;
       position: absolute;
@@ -110,17 +99,14 @@
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
-
     .nav-links.active {
       display: flex;
     }
   }
 </style>
-
 <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
-
   menuToggle?.addEventListener('click', () => {
     navLinks?.classList.toggle('active');
   });
