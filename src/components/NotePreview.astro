@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  slug: string;
+}
+
+const { title, excerpt, slug } = Astro.props;
+---
+
+<div class="note-preview">
+  <a href={`/notes/${slug}`} class="note-link">
+    <h3>{title}</h3>
+    <p>{excerpt}</p>
+  </a>
+</div>
+
+<style>
+  .note-preview {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+  }
+
+  .note-preview:hover {
+    transform: translateY(-2px);
+  }
+
+  .note-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    background: var(--orange-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>

@@ -1,0 +1,48 @@
+:root {
+  --orange-gradient: linear-gradient(135deg, #FF8C42 0%, #FF5733 100%);
+  --dark-gradient: linear-gradient(135deg, #121212 0%, #000000 100%);
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+  --bg-primary: #000000;
+  --bg-secondary: #1A1A1A;
+  --max-width: 1200px;
+  --content-width: 65ch;
+  --container-padding: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--dark-gradient);
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1.5rem;
+  }
+}
