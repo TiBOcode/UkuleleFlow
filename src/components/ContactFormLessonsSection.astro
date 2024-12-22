@@ -1,0 +1,32 @@
+---
+import ContactFormLessons from './ContactFormLessons.astro';
+---
+
+<section class="contact-section">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p class="subtitle">Fill this form, I'll come back to you!</p>
+    <ContactFormLessons />
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    background: var(--orange-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+</style>
