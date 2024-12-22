@@ -1,0 +1,164 @@
+---
+import Layout from './Layout.astro';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title: string;
+  date: Date;
+  videoId: string;
+  tags: string[];
+  related: string[];
+}
+
+const { title, date, videoId, tags, related } = Astro.props;
+const allFlows = await getCollection('flows');
+const relatedFlows = allFlows.filter(flow => 
+  related.includes(flow.slug)
+);
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(date);
+};
+---
+
+<Layout title={`${title} | Ukulele Flow`}>
+  <article class="flow">
+    <div class="container">
+      <header>
+        <h1>{title}</h1>
+        <time datetime={date.toISOString()}>{formatDate(date)}</time>
+        {tags.length > 0 && (
+          <div class="tags">
+            {tags.map(tag => <span class="tag">#{tag}</span>)}
+          </div>
+        )}
+      </header>
+
+      <div class="video-container">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="content">
+        <slot />
+      </div>
+
+      {relatedFlows.length > 0 && (
+        <footer>
+          <h2>Related Flows</h2>
+          <div class="related-flows">
+            {relatedFlows.map(flow => (
+              <a href={`/flows/${flow.slug}`} class="related-flow">
+                {flow.data.title}
+              </a>
+            ))}
+          </div>
+        </footer>
+      )}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .flow {
+    padding: 2rem var(--container-padding);
+  }
+
+  header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: var(--orange-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  time {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    margin: 2rem 0;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0.5rem;
+  }
+
+  .content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .related-flows {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .related-flow {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+
+  .related-flow:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+  }
+</style>
