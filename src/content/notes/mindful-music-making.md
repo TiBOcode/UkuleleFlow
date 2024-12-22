@@ -1,8 +1,14 @@
 ---
-title: "Mindful Music Making"
+title: Mindful Music Making
 date: 2024-01-17
-tags: ["mindfulness", "music", "practice"]
-related: ["flow-state-in-music", "deliberate-practice"]
+tags:
+  - mindfulness
+  - music
+  - practice
+related:
+  - flow-state-in-music
+  - deliberate-practice
+  - posture
 ---
 
 Mindful music making combines the principles of mindfulness meditation with musical practice. It's about being fully present with each note and movement.
