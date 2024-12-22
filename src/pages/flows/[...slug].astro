@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import FlowLayout from '../../layouts/FlowLayout.astro';
+
+export async function getStaticPaths() {
+  const flows = await getCollection('flows');
+  return flows.map(flow => ({
+    params: { slug: flow.slug },
+    props: { flow },
+  }));
+}
+
+const { flow } = Astro.props;
+const { Content } = await flow.render();
+---
+
+<FlowLayout {...flow.data}>
+  <Content />
+</FlowLayout>
