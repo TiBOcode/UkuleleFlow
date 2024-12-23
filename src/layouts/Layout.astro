@@ -24,7 +24,23 @@ const { title, description = "TiBO's personal website - Content Creator & Develo
     <ViewTransitions />
   </head>
   <body>
-    <Header />
-    <slot />
+    <Header transition:persist />
+    <main transition:animate="morph">
+      <slot />
+    </main>
   </body>
 </html>
+
+<style is:global>
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-old(profile-image),
+  ::view-transition-new(profile-image) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+</style>

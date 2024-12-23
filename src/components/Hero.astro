@@ -1,5 +1,4 @@
 ---
-import SocialLinks from './SocialLinks.astro';
 ---
 <section class="hero">
   <div class="container">
@@ -11,9 +10,8 @@ import SocialLinks from './SocialLinks.astro';
     <div class="bio">
       <h2>Unlock Your Musical Freedom</h2>
       <p>
-        Break free from rigid patterns and start a more human way to enjoy music with your ukulele. No rules, just pure musical exploration.
+        Learn a Unique Playstyle centered around Simplicity, Pleasure & Exploration.
       </p>
-      <SocialLinks />
     </div>
   </div>
 </section>
@@ -31,12 +29,13 @@ import SocialLinks from './SocialLinks.astro';
   }
 
   .profile-image {
-    width: 300px; /* Increased from 250px */
-    height: 300px; /* Increased from 250px */
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
     transition: transform 0.3s ease;
+    view-transition-name: profile-image;
   }
 
   .profile-image:hover {

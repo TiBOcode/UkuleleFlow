@@ -3,13 +3,17 @@ const socialLinks = [
   {
     name: 'YouTube',
     url: 'https://www.youtube.com/@TiBO_Uke',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>`
+    icon: '<path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>'
   },
-  
+  {
+    name: 'Telegram',
+    url: 'https://t.me/tiboukulele',
+    icon: '<path d="M18.384 22.779a1.19 1.19 0 0 0 1.107.145 1.16 1.16 0 0 0 .724-.84C21.084 18.46 23.192 7.397 23.983 3.79a.78.78 0 0 0-.26-.758.8.8 0 0 0-.797-.14c-3.856 1.51-15.833 6.13-20.403 7.93a.787.787 0 0 0-.261.807.8.8 0 0 0 .641.437c2.102.28 4.86.67 4.86.67s1.285 3.91 1.95 5.903a.87.87 0 0 0 .61.581.83.83 0 0 0 .751-.23c1.15-1.08 2.92-2.75 2.92-2.75s3.37 2.49 5.29 3.76zm-6.63-6.33l1.47 4.83-.31-3.05c0-.01-5.47-5.27-5.47-5.27l10.83-6.49-6.52 10z"/>'
+  },
   {
     name: 'Patreon',
     url: 'https://www.patreon.com/TiBO_Ukulele',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/></svg>`
+    icon: '<path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/>'
   }
 ];
 ---
@@ -17,13 +21,11 @@ const socialLinks = [
 <div class="social-links">
   {socialLinks.map(link => (
     <a href={link.url} class="social-link" title={link.name} target="_blank" rel="noopener noreferrer">
-      <Fragment set:html={link.icon} />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <Fragment set:html={link.icon} />
+      </svg>
       <span class="sr-only">{link.name}</span>
     </a>
-    <div class="channel-container">
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <div class="g-ytsubscribe" data-channelid="YOUR_CHANNEL_ID" data-layout="full" data-count="default"></div>
-</div>
   ))}
 </div>
 
@@ -31,7 +33,6 @@ const socialLinks = [
   .social-links {
     display: flex;
     gap: 1.5rem;
-    margin-top: 2rem;
   }
 
   .social-link {
