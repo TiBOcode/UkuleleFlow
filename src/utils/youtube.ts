@@ -1,5 +1,9 @@
-export function extractYouTubeId(url: string): string {
-  const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+// Existing code...
+
+export function getPlaylistId(url: string): string {
+  const regExp = /[&?]list=([^&]+)/i;
   const match = url.match(regExp);
-  return (match && match[7].length === 11) ? match[7] : url;
+  return match ? match[1] : '';
 }
+
+export const UKULELE_FLOWS_PLAYLIST = 'PLhdWSzLbFz3nJSZd98mgPJ1DImJYgEbS-';
