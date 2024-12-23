@@ -1,58 +1,34 @@
 ---
-import { getCollection } from 'astro:content';
+import ProcessStep from './ProcessStep.astro';
 
-const allNotes = await getCollection('notes');
-const keyNotes = [
-  { 
-    slug: 'simple-structures',
-    emoji: '🎯'
+const steps = [
+  {
+    title: "Start with a Simple Structure",
+    description: "Begin with basic chords & fingerpicking to create the foundation of your music. Build confidence and create a solid structure for your improvisation.",
+    emoji: "🎯",
+    step: 1
   },
-  { 
-    slug: 'break-conventions',
-    emoji: '🚀'
+  {
+    title: "Tune Into Your Senses",
+    description: "Pay attention to the feel of the strings, the sound of each note, and the rhythm of your playing. Connect with the music on a deeper level through mindfulness.",
+    emoji: "🎵",
+    step: 2
   },
-  { 
-    slug: 'creative-freedom',
-    emoji: '✨'
+  {
+    title: "Explore & Flow",
+    description: "Let your music evolve organically. Experiment with dynamics, rhythms, and melodies until the Flow hits. Learn to dance with uncertainty and master the art of letting go.",
+    emoji: "✨",
+    step: 3
   }
 ];
-
-const featuredNotes = keyNotes
-  .map(key => ({
-    note: allNotes.find(note => note.slug === key.slug),
-    emoji: key.emoji
-  }))
-  .filter(item => item.note);
-
-function getExcerpt(content: string) {
-  return content.split('\n\n')[1].replace(/^#.*\n/, '').slice(0, 120) + '...';
-}
 ---
 
 <section class="featured-notes">
   <div class="container">
- 
-    <div class="notes-grid">
-      {featuredNotes.map(({note, emoji}) => (
-        <a href={`/notes/${note.slug}`} class="note-card">
-          <article>
-            <div class="note-header">
-              <span class="emoji">{emoji}</span>
-              <h3>{note.data.title}</h3>
-            </div>
-            <p>{getExcerpt(note.body)}</p>
-            <div class="card-footer">
-              <div class="tags">
-                {note.data.tags.map(tag => (
-                  <span class="tag">#{tag}</span>
-                ))}
-              </div>
-              <div class="cta">
-                Read More <span class="arrow">→</span>
-              </div>
-            </div>
-          </article>
-        </a>
+    
+    <div class="process-grid">
+      {steps.map(step => (
+        <ProcessStep {...step} />
       ))}
     </div>
   </div>
@@ -60,7 +36,7 @@ function getExcerpt(content: string) {
 
 <style>
   .featured-notes {
-    padding: 4rem 0;
+    padding: 0.5rem 0;
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
   }
 
@@ -75,98 +51,19 @@ function getExcerpt(content: string) {
 
   .subtitle {
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     text-align: center;
     font-size: 1.1rem;
   }
 
-  .notes-grid {
+  .process-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .note-card {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.2s ease;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .note-card:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .note-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .emoji {
-    font-size: 1.5rem;
-  }
-
-  .note-card h3 {
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    margin: 0;
-  }
-
-  .note-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-
-  .card-footer {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-  }
-
-  .cta {
-    color: #FF5733;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .arrow {
-    transition: transform 0.2s ease;
-  }
-
-  .note-card:hover .arrow {
-    transform: translateX(4px);
   }
 
   @media (max-width: 768px) {
-    .notes-grid {
+    .process-grid {
       grid-template-columns: 1fr;
     }
   }
