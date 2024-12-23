@@ -156,14 +156,14 @@ declare module 'astro:content' {
   slug: "flow1";
   body: string;
   collection: "flows";
-  data: any
+  data: InferEntrySchema<"flows">
 } & { render(): Render[".md"] };
 "less-is-more.md": {
 	id: "less-is-more.md";
   slug: "less-is-more";
   body: string;
   collection: "flows";
-  data: any
+  data: InferEntrySchema<"flows">
 } & { render(): Render[".md"] };
 };
 "notes": {
@@ -172,98 +172,98 @@ declare module 'astro:content' {
   slug: "improvisation-stories-on-ukulele";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "a-flow-is-a-story.md": {
 	id: "a-flow-is-a-story.md";
   slug: "a-flow-is-a-story";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "break-conventions.md": {
 	id: "break-conventions.md";
   slug: "break-conventions";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "creative-freedom.md": {
 	id: "creative-freedom.md";
   slug: "creative-freedom";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "deliberate-practice.md": {
 	id: "deliberate-practice.md";
   slug: "deliberate-practice";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "engage-all-the-senses.md": {
 	id: "engage-all-the-senses.md";
   slug: "engage-all-the-senses";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "flow-state-in-music.md": {
 	id: "flow-state-in-music.md";
   slug: "flow-state-in-music";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "least-effort-possible.md": {
 	id: "least-effort-possible.md";
   slug: "least-effort-possible";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "mindful-music-making.md": {
 	id: "mindful-music-making.md";
   slug: "mindful-music-making";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "simple-structures.md": {
 	id: "simple-structures.md";
   slug: "simple-structures";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "trust-the-process.md": {
 	id: "trust-the-process.md";
   slug: "trust-the-process";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "what-is-flow.md": {
 	id: "what-is-flow.md";
   slug: "what-is-flow";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "why-i-play-blindfolded.md": {
 	id: "why-i-play-blindfolded.md";
   slug: "why-i-play-blindfolded";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "yes-you-can-close-your-eyes-but-blindfolded-is-different.md": {
 	id: "yes-you-can-close-your-eyes-but-blindfolded-is-different.md";
   slug: "yes-you-can-close-your-eyes-but-blindfolded-is-different";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 };
 
@@ -275,5 +275,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("../../src/content/config.js");
 }
