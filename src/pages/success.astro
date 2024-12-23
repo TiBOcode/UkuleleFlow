@@ -2,6 +2,67 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
-    Thanks, I'll come back to you soon
+<Layout title="Message Sent | TiBO">
+  <main class="success-page">
+    <div class="container">
+      <div class="success-card">
+        <h1>Thank You! 🎵</h1>
+        <p>Your message has been received. I'll get back to you as soon as possible to discuss your ukulele journey.</p>
+        <a href="/" class="return-button">
+          <span>← Return to Home</span>
+        </a>
+      </div>
+    </div>
+  </main>
 </Layout>
+
+<style>
+  .success-page {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem var(--container-padding);
+  }
+
+  .success-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: var(--orange-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .return-button {
+    display: inline-flex;
+    align-items: center;
+    background: var(--orange-gradient);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .return-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 87, 51, 0.25);
+  }
+</style>
