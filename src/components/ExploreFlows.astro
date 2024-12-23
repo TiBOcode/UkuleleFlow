@@ -1,25 +1,22 @@
 ---
-import { getCollection } from 'astro:content';
-import FlowCard from './FlowCard.astro';
-
-const flows = await getCollection('flows');
-const sortedFlows = flows.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+import { UKULELE_FLOWS_PLAYLIST } from '../utils/youtube';
+import YouTubePlaylist from './YouTubePlaylist.astro';
 ---
 
 <section class="explore-flows">
   <div class="container">
     <h2>Explore the Flows</h2>
-    <p class="subtitle">Discover creative ukulele journeys through video</p>
+    <p class="subtitle">Watch and learn from my ukulele journey</p>
     
-    <div class="flows-grid">
-      {sortedFlows.map(flow => (
-        <FlowCard
-          title={flow.data.title}
-          description={flow.data.description}
-          videoId={flow.data.videoId}
-          href={`/flows/${flow.slug}`}
-        />
-      ))}
+    <YouTubePlaylist playlistId={UKULELE_FLOWS_PLAYLIST} title="Ukulele Flows by TiBO" />
+    
+    <div class="cta-container">
+      <a href="https://www.youtube.com/@TiBO_Uke" class="youtube-cta" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+        </svg>
+        Subscribe for More Flows
+      </a>
     </div>
   </div>
 </section>
@@ -27,6 +24,7 @@ const sortedFlows = flows.sort((a, b) => b.data.date.getTime() - a.data.date.get
 <style>
   .explore-flows {
     padding: 4rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
   }
 
   h2 {
@@ -42,18 +40,35 @@ const sortedFlows = flows.sort((a, b) => b.data.date.getTime() - a.data.date.get
     text-align: center;
     color: var(--text-secondary);
     font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
-  .flows-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+  .cta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
   }
 
-  @media (max-width: 768px) {
-    .flows-grid {
-      grid-template-columns: 1fr;
-    }
+  .youtube-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #FF0000;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .youtube-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
+  }
+
+  .youtube-cta svg {
+    width: 24px;
+    height: 24px;
   }
 </style>
