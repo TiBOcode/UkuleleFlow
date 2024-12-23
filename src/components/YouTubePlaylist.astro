@@ -1,0 +1,38 @@
+---
+interface Props {
+  playlistId: string;
+  title?: string;
+}
+
+const { playlistId, title } = Astro.props;
+---
+
+<div class="playlist-container">
+  <iframe
+    src={`https://www.youtube.com/embed/videoseries?list=${playlistId}`}
+    title={title || "YouTube playlist"}
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<style>
+  .playlist-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
