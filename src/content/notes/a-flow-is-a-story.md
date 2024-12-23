@@ -5,7 +5,6 @@ tags: ["flow", "creativity", "improvisation", "teaching"]
 related: ["flow-state-in-music", "what-is-flow", "Improvisation-Stories-on-Ukulele"]
 description: "Understanding the storytelling nature of musical flow and improvisation"
 ---
-
 # A Flow is a Story
 
 "Don't Just Play. Create." This is the essence of Ukulele Flow—transforming musical practice from mere reproduction to creative expression.
@@ -36,7 +35,7 @@ description: "Understanding the storytelling nature of musical flow and improvis
 
 ### Phase 3: Development
 - Balance familiarity with surprise
-- Create engaging patterns
+- Create engaging pattern
 - Maintain listener connection
 
 ### Phase 4: Resolution
@@ -44,4 +43,4 @@ description: "Understanding the storytelling nature of musical flow and improvis
 - Create satisfying closure
 - Honor the journey
 
-Remember: Every flow tells a story—your story—through the language of music.
+Remember: You're just playing for yourself. You're playing **with** yourself

@@ -1,8 +1,12 @@
 ---
-title: "Embrace Creative Freedom"
+title: Embrace Creative Freedom
 date: 2024-01-23
-tags: ["creativity", "expression", "flow"]
-related: ["flow-state-in-music", "what-is-flow"]
+tags:
+  - creativity
+  - flow
+related:
+  - flow-state-in-music
+  - what-is-flow
 ---
 
 # Embrace Creative Freedom

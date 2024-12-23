@@ -1,9 +1,15 @@
 ---
 title: "Improvisation Stories: Structured Creativity on Ukulele"
 date: 2024-12-21
-tags: ["improvisation", "creativity", "technique", "teaching"]
-related: ["a-flow-is-a-story", "what-is-flow", "flow-state-in-music"]
-description: "A guide to developing improvisation skills through structured storytelling on the ukulele"
+tags:
+  - improvisation
+  - creativity
+  - technique
+related:
+  - a-flow-is-a-story
+  - what-is-flow
+  - flow-state-in-music
+description: A guide to developing improvisation skills through structured storytelling on the ukulele
 ---
 
 # Improvisation Stories on Ukulele

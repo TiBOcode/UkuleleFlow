@@ -181,13 +181,6 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-"blindfolded-is-different.md": {
-	id: "blindfolded-is-different.md";
-  slug: "blindfolded-is-different";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
 "break-conventions.md": {
 	id: "break-conventions.md";
   slug: "break-conventions";
@@ -198,13 +191,6 @@ declare module 'astro:content' {
 "creative-freedom.md": {
 	id: "creative-freedom.md";
   slug: "creative-freedom";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"deliberate-practice.md": {
-	id: "deliberate-practice.md";
-  slug: "deliberate-practice";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
@@ -230,13 +216,6 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-"mindful-music-making.md": {
-	id: "mindful-music-making.md";
-  slug: "mindful-music-making";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
 "simple-structures.md": {
 	id: "simple-structures.md";
   slug: "simple-structures";
@@ -258,13 +237,6 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-"why-i-play-blindfolded.md": {
-	id: "why-i-play-blindfolded.md";
-  slug: "why-i-play-blindfolded";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
 };
 
 	};
@@ -275,5 +247,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = typeof import("./../../src/content/config.js");
 }
