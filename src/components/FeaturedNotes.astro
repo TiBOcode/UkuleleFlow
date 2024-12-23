@@ -31,9 +31,7 @@ function getExcerpt(content: string) {
 
 <section class="featured-notes">
   <div class="container">
-    <h2>Your Path to Musical Freedom</h2>
-    <p class="subtitle">Discover a new way to express yourself through music</p>
-    
+ 
     <div class="notes-grid">
       {featuredNotes.map(({note, emoji}) => (
         <a href={`/notes/${note.slug}`} class="note-card">
