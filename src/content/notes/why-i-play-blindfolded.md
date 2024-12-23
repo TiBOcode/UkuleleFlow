@@ -1,9 +1,17 @@
 ---
-title: "The Power of Blindfolded Practice"
+title: The Power of Blindfolded Practice
 date: 2024-08-30
-tags: ["practice", "technique", "mindfulness", "sensory-awareness"]
-related: ["engage-all-the-senses", "mindful-music-making", "flow-state-in-music"]
-description: "Exploring how blindfolded practice enhances musical development"
+tags:
+  - practice
+  - technique
+  - mindfulness
+  - sensory-awareness
+related:
+  - engage-all-the-senses
+  - mindful-music-making
+  - flow-state-in-music
+  - blindfolded-is-different
+description: Exploring how blindfolded practice enhances musical development
 ---
 
 # The Power of Blindfolded Practice
