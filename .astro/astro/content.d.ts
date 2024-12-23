@@ -202,16 +202,16 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-"mindful-music-making.md": {
-	id: "mindful-music-making.md";
-  slug: "mindful-music-making";
+"least-effort-possible.md": {
+	id: "least-effort-possible.md";
+  slug: "least-effort-possible";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-"posture.md": {
-	id: "posture.md";
-  slug: "posture";
+"mindful-music-making.md": {
+	id: "mindful-music-making.md";
+  slug: "mindful-music-making";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
@@ -254,5 +254,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = typeof import("./../../src/content/config.js");
 }
