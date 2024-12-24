@@ -172,21 +172,14 @@ declare module 'astro:content' {
   slug: "improvisation-stories-on-ukulele";
   body: string;
   collection: "notes";
-  data: InferEntrySchema<"notes">
+  data: any
 } & { render(): Render[".md"] };
 "break-conventions.md": {
 	id: "break-conventions.md";
   slug: "break-conventions";
   body: string;
   collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"creative-freedom.md": {
-	id: "creative-freedom.md";
-  slug: "creative-freedom";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
+  data: any
 } & { render(): Render[".md"] };
 "flow-state-in-music.md": {
 	id: "flow-state-in-music.md";
@@ -223,13 +216,6 @@ declare module 'astro:content' {
   collection: "notes";
   data: any
 } & { render(): Render[".md"] };
-"tune-into-your-senses.md": {
-	id: "tune-into-your-senses.md";
-  slug: "tune-into-your-senses";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
 "why-ukulele-flow.md": {
 	id: "why-ukulele-flow.md";
   slug: "why-ukulele-flow";
@@ -247,5 +233,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../../src/content/config.js");
+	export type ContentConfig = never;
 }

@@ -29,4 +29,4 @@ Reaching the mastery stage is where things get transformative. Movements become 
 ### On a more practical note:
 Start with a position that feels comfortable and natural. Regularly check in with your body—scan for tension while you play, and come back to your breath whenever you feel off balance.
 
-Don’t be afraid to experiment. Try different positions, notice how posture affects your sound, and always prioritize comfort over rigid ideas of what’s "correct." Your body knows the way; you just have to listen.
+Don’t be afraid to experiment. Try different positions and always prioritize comfort over rigid ideas of what’s "correct." Your body knows the way; you just have to listen.
