@@ -11,8 +11,6 @@ description: How to trust the process
 
 ---
 
-# **Trust the Process**
-
 Learning music is a long-term commitment. **Trusting the process** centers on making the journey pleasurable and sustainable by focusing on:
 
 - Staying motivated through ups and downs.
