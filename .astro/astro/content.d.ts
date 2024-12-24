@@ -167,20 +167,6 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "notes": {
-"Improvisation-Stories-on-Ukulele.md": {
-	id: "Improvisation-Stories-on-Ukulele.md";
-  slug: "improvisation-stories-on-ukulele";
-  body: string;
-  collection: "notes";
-  data: any
-} & { render(): Render[".md"] };
-"break-conventions.md": {
-	id: "break-conventions.md";
-  slug: "break-conventions";
-  body: string;
-  collection: "notes";
-  data: any
-} & { render(): Render[".md"] };
 "flow-state-in-music.md": {
 	id: "flow-state-in-music.md";
   slug: "flow-state-in-music";
@@ -212,13 +198,6 @@ declare module 'astro:content' {
 "tune-into-your-senses.md": {
 	id: "tune-into-your-senses.md";
   slug: "tune-into-your-senses";
-  body: string;
-  collection: "notes";
-  data: any
-} & { render(): Render[".md"] };
-"why-ukulele-flow.md": {
-	id: "why-ukulele-flow.md";
-  slug: "why-ukulele-flow";
   body: string;
   collection: "notes";
   data: any
