@@ -10,6 +10,7 @@ related:
   - Improvisation Stories on Ukulele
   - Mindfulness in Music
   - The Art of Letting Go
+description:
 ---
 
 # **Trust the Process**

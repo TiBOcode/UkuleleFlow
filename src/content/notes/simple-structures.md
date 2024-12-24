@@ -1,8 +1,14 @@
 ---
-title: "Start With Simple Structures"
+title: Start With Simple Structures
 date: 2024-01-21
-tags: ["beginner", "technique", "creativity"]
-related: ["flow-state-in-music", "mindful-music-making"]
+tags:
+  - beginner
+  - technique
+  - creativity
+related:
+  - flow-state-in-music
+  - mindful-music-making
+description:
 ---
 
 # Start With Simple Structures
