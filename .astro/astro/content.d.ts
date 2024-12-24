@@ -174,13 +174,6 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-"a-flow-is-a-story.md": {
-	id: "a-flow-is-a-story.md";
-  slug: "a-flow-is-a-story";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
 "break-conventions.md": {
 	id: "break-conventions.md";
   slug: "break-conventions";
@@ -191,13 +184,6 @@ declare module 'astro:content' {
 "creative-freedom.md": {
 	id: "creative-freedom.md";
   slug: "creative-freedom";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"engage-all-the-senses.md": {
-	id: "engage-all-the-senses.md";
-  slug: "engage-all-the-senses";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
@@ -230,9 +216,16 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-"what-is-flow.md": {
-	id: "what-is-flow.md";
-  slug: "what-is-flow";
+"tune-into-your-senses.md": {
+	id: "tune-into-your-senses.md";
+  slug: "tune-into-your-senses";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
+"why-ukulele-flow.md": {
+	id: "why-ukulele-flow.md";
+  slug: "why-ukulele-flow";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
@@ -247,5 +240,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = typeof import("./../../src/content/config.js");
 }
