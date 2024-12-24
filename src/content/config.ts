@@ -5,6 +5,7 @@ const notes = defineCollection({
     title: z.string(),
     date: z.date(),
     updated: z.date().optional(),
+    description: z.string().optional(),
     tags: z.array(z.string()).default([]),
     related: z.array(z.string()).default([])
   })
