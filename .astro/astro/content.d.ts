@@ -167,23 +167,23 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "notes": {
-"Improvisation-Stories-on-Ukulele.md": {
-	id: "Improvisation-Stories-on-Ukulele.md";
-  slug: "improvisation-stories-on-ukulele";
+"1-simple-structures.md": {
+	id: "1-simple-structures.md";
+  slug: "1-simple-structures";
   body: string;
   collection: "notes";
   data: any
 } & { render(): Render[".md"] };
-"break-conventions.md": {
-	id: "break-conventions.md";
-  slug: "break-conventions";
+"2-tune-into-your-senses.md": {
+	id: "2-tune-into-your-senses.md";
+  slug: "2-tune-into-your-senses";
   body: string;
   collection: "notes";
   data: any
 } & { render(): Render[".md"] };
-"flow-state-in-music.md": {
-	id: "flow-state-in-music.md";
-  slug: "flow-state-in-music";
+"3-explore-and-flow.md": {
+	id: "3-explore-and-flow.md";
+  slug: "3-explore-and-flow";
   body: string;
   collection: "notes";
   data: any
@@ -195,9 +195,9 @@ declare module 'astro:content' {
   collection: "notes";
   data: any
 } & { render(): Render[".md"] };
-"simple-structures.md": {
-	id: "simple-structures.md";
-  slug: "simple-structures";
+"the-3-pillars-of-flow.md": {
+	id: "the-3-pillars-of-flow.md";
+  slug: "the-3-pillars-of-flow";
   body: string;
   collection: "notes";
   data: any
@@ -205,20 +205,6 @@ declare module 'astro:content' {
 "trust-the-process.md": {
 	id: "trust-the-process.md";
   slug: "trust-the-process";
-  body: string;
-  collection: "notes";
-  data: any
-} & { render(): Render[".md"] };
-"tune-into-your-senses.md": {
-	id: "tune-into-your-senses.md";
-  slug: "tune-into-your-senses";
-  body: string;
-  collection: "notes";
-  data: any
-} & { render(): Render[".md"] };
-"why-ukulele-flow.md": {
-	id: "why-ukulele-flow.md";
-  slug: "why-ukulele-flow";
   body: string;
   collection: "notes";
   data: any
