@@ -1,5 +1,6 @@
 ---
 title: "Trust the Process: The Fun Is the Practice"
+<<<<<<< HEAD
 date: 2024-12-20
 tags:
   - flow
@@ -11,6 +12,11 @@ related:
   - Mindfulness in Music
   - The Art of Letting Go
 description:
+=======
+date: 2024-12-20  
+tags: ["ukulele flow", "music learning", "playfulness", "philosophy"]  
+related: ["Improvisation Stories on Ukulele", "Mindfulness in Music", "The Art of Letting Go"]
+>>>>>>> a53cc80252997113678953997e1f47dc1c23c684
 ---
 
 # **Trust the Process**

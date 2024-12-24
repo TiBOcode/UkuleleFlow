@@ -1,12 +1,17 @@
 ---
-title: What is Flow?
+title: "What is Flow?"
 date: 2024-12-20
+<<<<<<< HEAD
 tags:
   - flow
   - music
   - practice
 related: []
 description:
+=======
+tags: ["flow", "music", "practice"]
+related: ["flow-state-in-music", "deliberate-practice"]
+>>>>>>> a53cc80252997113678953997e1f47dc1c23c684
 ---
 
 ### **What is Flow?**
