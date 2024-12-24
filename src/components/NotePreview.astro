@@ -1,17 +1,17 @@
 ---
 interface Props {
   title: string;
-  excerpt: string;
+  description: string;
   slug: string;
 }
 
-const { title, excerpt, slug } = Astro.props;
+const { title, description, slug } = Astro.props;
 ---
 
 <div class="note-preview">
   <a href={`/notes/${slug}`} class="note-link">
     <h3>{title}</h3>
-    <p>{excerpt}</p>
+    <p>{description}</p>
   </a>
 </div>
 
