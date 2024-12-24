@@ -156,14 +156,14 @@ declare module 'astro:content' {
   slug: "flow1";
   body: string;
   collection: "flows";
-  data: InferEntrySchema<"flows">
+  data: any
 } & { render(): Render[".md"] };
 "less-is-more.md": {
 	id: "less-is-more.md";
   slug: "less-is-more";
   body: string;
   collection: "flows";
-  data: InferEntrySchema<"flows">
+  data: any
 } & { render(): Render[".md"] };
 };
 "notes": {
@@ -193,28 +193,35 @@ declare module 'astro:content' {
   slug: "flow-state-in-music";
   body: string;
   collection: "notes";
-  data: InferEntrySchema<"notes">
+  data: any
 } & { render(): Render[".md"] };
 "least-effort-possible.md": {
 	id: "least-effort-possible.md";
   slug: "least-effort-possible";
   body: string;
   collection: "notes";
-  data: InferEntrySchema<"notes">
+  data: any
 } & { render(): Render[".md"] };
 "simple-structures.md": {
 	id: "simple-structures.md";
   slug: "simple-structures";
   body: string;
   collection: "notes";
-  data: InferEntrySchema<"notes">
+  data: any
 } & { render(): Render[".md"] };
 "trust-the-process.md": {
 	id: "trust-the-process.md";
   slug: "trust-the-process";
   body: string;
   collection: "notes";
-  data: InferEntrySchema<"notes">
+  data: any
+} & { render(): Render[".md"] };
+"tune-into-your-senses.md": {
+	id: "tune-into-your-senses.md";
+  slug: "tune-into-your-senses";
+  body: string;
+  collection: "notes";
+  data: any
 } & { render(): Render[".md"] };
 "tune-into-your-senses.md": {
 	id: "tune-into-your-senses.md";
@@ -228,7 +235,7 @@ declare module 'astro:content' {
   slug: "why-ukulele-flow";
   body: string;
   collection: "notes";
-  data: InferEntrySchema<"notes">
+  data: any
 } & { render(): Render[".md"] };
 };
 

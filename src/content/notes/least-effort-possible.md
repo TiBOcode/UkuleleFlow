@@ -1,5 +1,5 @@
 ---
-title: The Least-Effort-Possible Rule (Lazy Master)
+title: Become the Laziest of all Master!
 date: 2024-08-14
 tags:
   - technique
@@ -8,43 +8,25 @@ tags:
 related:
   - engage-all-the-senses
   - mindful-music-making
-description: Understanding how posture affects musical performance and development
+description: Understanding the Least Effort Possible Rule and how posture affects your ability to Flow
 ---
-Check how talented musicians play and you'll notice one thing: they make it look effortless: every movement serves a purpose. Improvement in music is about incremental tuning of fine motor control skills.** Good posture creates the foundation for developing these skills efficiently.**
 
-## Become the Lazy Master
-The path to Mastery is about **creating the same musical result with the least effort possible**
+Check how talented musicians play, and you’ll notice one thing: they make it look effortless. Every movement serves a purpose. Improvement in music is about incrementally tuning fine motor control skills, and good posture is the foundation for developing these skills efficiently.  
 
+Mastery, in essence, is about creating the same musical result with the least effort possible.  
 
-1. **Beginner Stage**
-   - Movements are exaggerated
-   - Excess tension in hands and arms
-   - Body position is often rigid
+In the beginner stage, movements tend to be exaggerated. There's often tension in the hands and arms, and the body feels rigid and awkward. As you move into the development stage, the focus shifts to identifying unnecessary tension, refining movements, and building a deeper awareness of your body.  
 
-2. **Development Stage**
-   - Identifying unnecessary tension
-   - Refining movements
-   - Developing body awareness
-
-3. **Mastery Stage**
-   - Efficient, minimal movements
-   - Relaxed but controlled execution
-   - Natural, comfortable positioning
-
-
-
-**Key Takeaway**
-
-1. Relax your muscles
-2. Congratulate yourself for remembering 
-3. Realize you're not even halfway there 
-
-Ok, more seriously:
-
-- Start with a comfortable, natural position
-- Regularly scan for tension while playing
-- Experiment with different positions
-- Notice the relationship between posture and sound
-- 4. Focus on comfort over "correct" positioning
+Reaching the mastery stage is where things get transformative. Movements become efficient and minimal, execution is relaxed yet controlled, and your body finds a natural, comfortable positioning. The result? Music flows effortlessly, and the joy of playing takes center stage.
 
 ## Key Takeaway
+
+1. Engage all your senses & Breath
+2. Congratulate yourself for remembering
+3. Forget 5s later
+4. Realize there’s still so much more to explore and smile
+
+### On a more practical note:
+Start with a position that feels comfortable and natural. Regularly check in with your body—scan for tension while you play, and come back to your breath whenever you feel off balance.
+
+Don’t be afraid to experiment. Try different positions, notice how posture affects your sound, and always prioritize comfort over rigid ideas of what’s "correct." Your body knows the way; you just have to listen.
