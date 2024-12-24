@@ -5,42 +5,76 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
-  description?: string;
+  description: string; // Made required
 }
 
-const { title, description = "TiBO's personal website - Content Creator & Developer" } = Astro.props;
+const { 
+  title, 
+  description 
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
+    
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
+    
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body>
     <Header transition:persist />
-    <main transition:animate="morph">
+    <main transition:animate="fade">
       <slot />
     </main>
   </body>
 </html>
 
 <style is:global>
+  /* Define the animations */
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slide {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+
+  /* View transitions */
   ::view-transition-old(root),
   ::view-transition-new(root) {
-    animation: none;
+    animation: fade 0.3s ease-in-out;
     mix-blend-mode: normal;
   }
 
   ::view-transition-old(profile-image),
   ::view-transition-new(profile-image) {
-    animation: none;
+    animation: slide 0.3s ease-in-out;
     mix-blend-mode: normal;
+  }
+
+  /* Base styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
   }
 </style>
