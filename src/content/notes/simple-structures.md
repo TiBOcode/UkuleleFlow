@@ -10,9 +10,6 @@ related:
   - mindful-music-making
 description:
 ---
-
-# Start With Simple Structures
-
 The path to musical freedom begins with simple foundations. By mastering basic patterns, you create a launching pad for endless creative possibilities.
 
 ## Why Simple Works

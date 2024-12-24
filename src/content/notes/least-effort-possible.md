@@ -10,8 +10,6 @@ related:
   - mindful-music-making
 description: Understanding how posture affects musical performance and development
 ---
-
-
 Check how talented musicians play and you'll notice one thing: they make it look effortless: every movement serves a purpose. Improvement in music is about incremental tuning of fine motor control skills.** Good posture creates the foundation for developing these skills efficiently.**
 
 ## Become the Lazy Master

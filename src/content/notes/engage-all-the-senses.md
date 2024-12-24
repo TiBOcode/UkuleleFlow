@@ -5,9 +5,6 @@ tags: ["mindfulness", "practice", "sensory-awareness", "learning"]
 related: ["mindful-music-making", "flow-state-in-music", "posture"]
 description: "Understanding how sensory engagement leads to musical mastery"
 ---
-
-# Engaging All Senses in Musical Practice
-
 Mastery comes through deep sensory awareness. Just as:
 
 - An experienced chef tastes layers of flavor you don't 

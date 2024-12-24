@@ -11,8 +11,6 @@ related:
   - flow-state-in-music
 description: A guide to developing improvisation skills through structured storytelling on the ukulele
 ---
-
-# Improvisation Stories on Ukulele
 Improvisation stories provide a framework for creative expression, combining structure with freedom to help musicians develop their unique voice.
 
 ## Core Elements

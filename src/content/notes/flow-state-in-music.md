@@ -5,9 +5,6 @@ tags: ["flow", "mindfulness", "practice", "creativity"]
 related: ["what-is-flow", "mindful-music-making", "deliberate-practice"]
 description: "Understanding and achieving flow state in musical practice and performance"
 ---
-
-# Flow State in Music
-
 Flow state represents the perfect balance between challenge and skill—a state of complete immersion and focus that enhances both practice and performance.
 
 ## Key Components
