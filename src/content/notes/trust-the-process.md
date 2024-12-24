@@ -1,15 +1,8 @@
 ---
 title: "Trust the Process: The Fun Is the Practice"
-date: 2024-12-20
-tags:
-  - flow
-  - learning
-  - playfulness
-  - philosophy
-related:
-  - Improvisation Stories on Ukulele
-  - Mindfulness in Music
-  - The Art of Letting Go
+date: 2024-12-20  
+tags: ["ukulele flow", "music learning", "playfulness", "philosophy"]  
+related: ["Improvisation Stories on Ukulele", "Mindfulness in Music", "The Art of Letting Go"]
 ---
 
 # **Trust the Process**
