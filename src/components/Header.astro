@@ -11,13 +11,13 @@ import SocialLinks from './SocialLinks.astro';
     </div>
     
     <nav class="nav">
-      <button class="menu-toggle" aria-label="Toggle Menu">
+      <button class="menu-toggle" aria-label="Toggle Menu" id="menuToggle">
         <span></span>
         <span></span>
         <span></span>
       </button>
       
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="/notes">Blog</a></li>
         <li><a href="/contact">Book your Lesson</a></li>
         <li class="social-container"><SocialLinks /></li>
@@ -25,10 +25,52 @@ import SocialLinks from './SocialLinks.astro';
     </nav>
   </div>
 </header>
+
+<script>
+  function setupMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const header = document.querySelector('.header');
+    
+    if (!menuToggle || !navLinks || !header) return;
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (!header.contains(target) && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Toggle menu
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+  }
+
+  // Setup menu on initial load
+  setupMenu();
+
+  // Setup menu after view transitions
+  document.addEventListener('astro:page-load', setupMenu);
+</script>
+
 <style>
   .header {
     padding: 1.5rem 0;
     backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -37,6 +79,7 @@ import SocialLinks from './SocialLinks.astro';
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   .logo a {
     text-decoration: none;
@@ -76,6 +119,7 @@ import SocialLinks from './SocialLinks.astro';
   .menu-toggle {
     display: none;
   }
+
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;
@@ -83,6 +127,8 @@ import SocialLinks from './SocialLinks.astro';
       border: none;
       cursor: pointer;
       padding: 0.5rem;
+      position: relative;
+      z-index: 102;
     }
     .menu-toggle span {
       display: block;
@@ -92,28 +138,30 @@ import SocialLinks from './SocialLinks.astro';
       margin: 5px 0;
       transition: 0.3s;
     }
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
     .nav-links {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
-      background: var(--bg-secondary);
-      padding: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2rem;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     .nav-links.active {
       display: flex;
     }
   }
 </style>
-<script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  menuToggle?.addEventListener('click', () => {
-    navLinks?.classList.toggle('active');
-  });
-</script>
