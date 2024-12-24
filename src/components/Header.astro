@@ -17,11 +17,13 @@ import SocialLinks from './SocialLinks.astro';
         <span></span>
       </button>
       
-      <ul class="nav-links" id="navLinks">
-        <li><a href="/notes">Blog</a></li>
-        <li><a href="/contact">Book your Lesson</a></li>
-        <li class="social-container"><SocialLinks /></li>
-      </ul>
+      <div class="nav-container">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/notes">Blog</a></li>
+          <li><a href="/contact">Book your Lesson</a></li>
+          <li class="social-container"><SocialLinks /></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
@@ -30,31 +32,34 @@ import SocialLinks from './SocialLinks.astro';
   function setupMenu() {
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    const header = document.querySelector('.header');
     
-    if (!menuToggle || !navLinks || !header) return;
+    if (!menuToggle || !navLinks) return;
+
+    // Remove any existing event listeners
+    const newMenuToggle = menuToggle.cloneNode(true);
+    menuToggle.parentNode?.replaceChild(newMenuToggle, menuToggle);
+    
+    // Toggle menu
+    newMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+      newMenuToggle.classList.toggle('active');
+    });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
-      if (!header.contains(target) && navLinks.classList.contains('active')) {
+      if (!navLinks.contains(target) && !newMenuToggle.contains(target)) {
         navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
+        newMenuToggle.classList.remove('active');
       }
-    });
-
-    // Toggle menu
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
     });
 
     // Close menu when clicking on a link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
+        newMenuToggle.classList.remove('active');
       });
     });
   }
@@ -75,16 +80,18 @@ import SocialLinks from './SocialLinks.astro';
     top: 0;
     z-index: 100;
   }
-  .header .container {
+
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
   }
+
   .logo a {
     text-decoration: none;
     color: var(--text-primary);
   }
+
   .logo h1 {
     font-size: 1.6rem; 
     font-weight: 700;
@@ -93,29 +100,39 @@ import SocialLinks from './SocialLinks.astro';
     -webkit-text-fill-color: transparent;
     margin-bottom: -0.5rem;
   }
+
   .subtitle {
     font-size: 0.8rem; 
     color: var(--text-secondary);
     font-weight: 400;
   }
+
+  .nav-container {
+    position: relative;
+  }
+
   .nav-links {
     display: flex;
     gap: 2rem;
     list-style: none;
     align-items: center;
   }
+
   .nav-links a {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 600;
     transition: color 0.2s;
   }
+
   .nav-links a:hover {
     color: #FF5733;
   }
+
   .social-container :global(.social-links) {
     margin-top: 0;
   }
+
   .menu-toggle {
     display: none;
   }
@@ -127,9 +144,9 @@ import SocialLinks from './SocialLinks.astro';
       border: none;
       cursor: pointer;
       padding: 0.5rem;
-      position: relative;
       z-index: 102;
     }
+
     .menu-toggle span {
       display: block;
       width: 25px;
@@ -138,19 +155,31 @@ import SocialLinks from './SocialLinks.astro';
       margin: 5px 0;
       transition: 0.3s;
     }
+
     .menu-toggle.active span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
+
     .menu-toggle.active span:nth-child(2) {
       opacity: 0;
     }
+
     .menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -7px);
     }
+
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+    }
+
     .nav-links {
       display: none;
       position: absolute;
-      top: 100%;
+      top: 72px; /* Header height */
       left: 0;
       right: 0;
       background: rgba(0, 0, 0, 0.5);
@@ -159,7 +188,9 @@ import SocialLinks from './SocialLinks.astro';
       flex-direction: column;
       gap: 2rem;
       text-align: center;
+      pointer-events: auto;
     }
+
     .nav-links.active {
       display: flex;
     }
