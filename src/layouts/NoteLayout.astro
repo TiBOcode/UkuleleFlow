@@ -27,7 +27,6 @@ const formatDate = (date: Date) => {
 <Layout title={`${title} | TiBO's Notes`}>
   <article class="note">
     <header>
-    
       <h1>{title}</h1>
       <div class="metadata">
         <time datetime={date.toISOString()}>{formatDate(date)}</time>
@@ -65,7 +64,7 @@ const formatDate = (date: Date) => {
 
 <style>
   .note {
-    max-width: var(--content-width);
+    max-width: 800px; /* Increased from var(--content-width) */
     margin: 0 auto;
     padding: 2rem var(--container-padding);
   }
@@ -107,8 +106,32 @@ const formatDate = (date: Date) => {
   }
 
   .content {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1rem; /* Reduced from 1.1rem */
+    line-height: 1.7; /* Slightly reduced from 1.8 */
+  }
+
+  .content :global(h1) {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .content :global(h2) {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+  }
+
+  .content :global(h3) {
+    font-size: 1.25rem;
+    margin: 1.25rem 0 0.75rem;
+  }
+
+  .content :global(p) {
+    margin-bottom: 1rem;
+  }
+
+  .content :global(ul), .content :global(ol) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
   }
 
   footer {
@@ -141,5 +164,31 @@ const formatDate = (date: Date) => {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-primary);
     transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .note {
+      padding: 1.5rem var(--container-padding);
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .content {
+      font-size: 0.95rem; /* Slightly smaller on mobile */
+    }
+
+    .content :global(h1) {
+      font-size: 1.75rem;
+    }
+
+    .content :global(h2) {
+      font-size: 1.35rem;
+    }
+
+    .content :global(h3) {
+      font-size: 1.15rem;
+    }
   }
 </style>
