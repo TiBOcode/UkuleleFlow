@@ -1,8 +1,12 @@
 ---
-title: "What is Flow?"
+title: What is Flow?
 date: 2024-12-20
-tags: ["flow", "music", "practice"]
-related: ["flow-state-in-music", "deliberate-practice"]
+tags:
+  - flow
+  - music
+  - practice
+related:
+  - a-flow-is-a-story
 ---
 
 ### **What is Flow?**
