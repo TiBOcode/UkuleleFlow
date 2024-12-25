@@ -1,0 +1,87 @@
+---
+import TestimonialCard from './TestimonialCard.astro';
+
+const testimonials = [
+  {
+    name: "Sarah M.",
+    text: "TiBO's approach to teaching ukulele is unique and refreshing. The focus on feeling and flow has completely transformed my relationship with music.",
+    location: "United States",
+    rating: 5
+  },
+  {
+    name: "Marco P.",
+    text: "I was stuck in a loop of just learning songs. TiBO showed me how to actually express myself through the ukulele. It's been a game-changer!",
+    location: "Italy",
+    rating: 5
+  },
+  {
+    name: "Julie L.",
+    text: "The mindful approach to learning ukulele has helped me overcome my performance anxiety. Now I play for the joy of it!",
+    location: "France",
+    rating: 5
+  }
+];
+---
+
+<section class="testimonials">
+  <div class="container">
+    <h2>What Students Say</h2>
+    <p class="subtitle">Hear from people who've discovered their musical flow</p>
+    
+    <div class="testimonials-grid">
+      {testimonials.map(testimonial => (
+        <TestimonialCard {...testimonial} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: 4rem 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+  }
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: var(--orange-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 968px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    h2 {
+      text-align: left;
+      padding-left: 1rem;
+    }
+    
+    .subtitle {
+      text-align: left;
+      padding-left: 1rem;
+    }
+  }
+</style>
