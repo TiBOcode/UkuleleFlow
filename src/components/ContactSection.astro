@@ -12,21 +12,30 @@ import ContactForm from './ContactForm.astro';
 
 <style>
   .contact-section {
-    padding: 4rem 0;
-  }
+ padding: 4rem 0;
+}
+h2 {
+ font-size: 2rem;
+ margin-bottom: 0.5rem;
+ text-align: center;
+ background: var(--orange-gradient);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+.subtitle {
+ text-align: center;
+ color: var(--text-secondary);
+ margin-bottom: 2rem;
+}
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    background: var(--orange-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .subtitle {
-    text-align: center;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-  }
+@media (max-width: 768px) {
+ h2 {
+   text-align: left;
+   padding-left: 1rem;
+ }
+ .subtitle {
+   text-align: left;
+   padding-left: 1rem;
+ }
+}
 </style>
