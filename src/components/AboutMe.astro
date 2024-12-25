@@ -1,17 +1,21 @@
 ---
-import { Image } from 'astro:assets';
-
+import ResponsiveImage from './ResponsiveImage.astro';
 ---
 
 <section class="about-me">
   <div class="container">
     <div class="content">
-      <div class="image-container">
-        <img src="/hitchhiking.jpg" alt="TiBO hitchhiking with his bike in the snow" class="profile-image" />
+      <div class="image-wrapper">
+        <ResponsiveImage 
+          src="/hitchhiking.jpg" 
+          alt="TiBO hitchhiking with his bike in the snow" 
+          className="about-image"
+        />
       </div>
       <div class="text-content">
         <h2>About Me</h2>
-         <p>Hey! I'm TiBO, a freedom-loving creative who takes exploration seriously. I created Ukulele Flow to share the art of making music through mindful play and simple creativity. My mission is to help you unlock your musical skills with feeling, exploration, and authentic expression.</p>
+        <p>Hey! I'm TiBO, a freedom-loving creative who takes exploration a bit too seriously. I created Ukulele Flow to share the art of connecting Feelings to Music and Music to Feelings. <br>
+        My mission is to help you unlock those musical skills, not for performance, not for playing songs, but rather for the sake of mindful exploration and authentic expression.</p>
       </div>
     </div>
   </div>
@@ -25,27 +29,18 @@ import { Image } from 'astro:assets';
 
   .content {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1.3fr 1.5fr;
     gap: 3rem;
     align-items: center;
   }
 
-  .image-container {
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-  }
-
-  .profile-image {
+  .image-wrapper {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    max-width: 600px;
   }
 
-  .image-container:hover .profile-image {
-    transform: scale(1.05);
+  :global(.about-image) {
+    aspect-ratio: 4/3;
   }
 
   h2 {
@@ -60,11 +55,6 @@ import { Image } from 'astro:assets';
     color: var(--text-secondary);
     font-size: 1.1rem;
     line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  p:last-child {
-    margin-bottom: 0;
   }
 
   @media (max-width: 968px) {
@@ -73,7 +63,7 @@ import { Image } from 'astro:assets';
       gap: 2rem;
     }
 
-    .image-container {
+    .image-wrapper {
       max-width: 500px;
       margin: 0 auto;
     }
