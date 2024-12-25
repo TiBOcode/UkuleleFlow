@@ -1,0 +1,68 @@
+---
+interface Props {
+  name: string;
+  text: string;
+  location: string;
+  rating: number;
+}
+
+const { name, text, location, rating } = Astro.props;
+
+const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+---
+
+<article class="testimonial-card">
+  <div class="rating">{stars}</div>
+  <blockquote>{text}</blockquote>
+  <footer>
+    <div class="author">
+      <div class="name">{name}</div>
+      <div class="location">{location}</div>
+    </div>
+  </footer>
+</article>
+
+<style>
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.2s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .rating {
+    color: #FF5733;
+    font-size: 1.25rem;
+    letter-spacing: 0.2rem;
+  }
+
+  blockquote {
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+  }
+
+  .name {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .location {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+</style>
