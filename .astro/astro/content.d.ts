@@ -156,75 +156,73 @@ declare module 'astro:content' {
   slug: "flow1";
   body: string;
   collection: "flows";
-  data: any
+  data: InferEntrySchema<"flows">
 } & { render(): Render[".md"] };
 "less-is-more.md": {
 	id: "less-is-more.md";
   slug: "less-is-more";
   body: string;
   collection: "flows";
-  data: any
+  data: InferEntrySchema<"flows">
 } & { render(): Render[".md"] };
 };
 "notes": {
-<<<<<<< HEAD
-"flow-state-in-music.md": {
-	id: "flow-state-in-music.md";
-  slug: "flow-state-in-music";
-=======
 "1-simple-structures.md": {
 	id: "1-simple-structures.md";
   slug: "1-simple-structures";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "2-tune-into-your-senses.md": {
 	id: "2-tune-into-your-senses.md";
   slug: "2-tune-into-your-senses";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "3-explore-and-flow.md": {
 	id: "3-explore-and-flow.md";
   slug: "3-explore-and-flow";
->>>>>>> b6124408f5cffd834613fd596c0e7fedf1b73f57
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
+"flow-state-in-music.md": {
+	id: "flow-state-in-music.md";
+  slug: "flow-state-in-music";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "least-effort-possible.md": {
 	id: "least-effort-possible.md";
   slug: "least-effort-possible";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
+"simple-structures.md": {
+	id: "simple-structures.md";
+  slug: "simple-structures";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "the-3-pillars-of-flow.md": {
 	id: "the-3-pillars-of-flow.md";
   slug: "the-3-pillars-of-flow";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
 "trust-the-process.md": {
 	id: "trust-the-process.md";
   slug: "trust-the-process";
   body: string;
   collection: "notes";
-  data: any
+  data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-<<<<<<< HEAD
-"tune-into-your-senses.md": {
-	id: "tune-into-your-senses.md";
-  slug: "tune-into-your-senses";
-  body: string;
-  collection: "notes";
-  data: any
-} & { render(): Render[".md"] };
-=======
->>>>>>> b6124408f5cffd834613fd596c0e7fedf1b73f57
 };
 
 	};
@@ -235,5 +233,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("../../src/content/config.js");
 }
