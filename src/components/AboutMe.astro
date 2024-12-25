@@ -13,7 +13,7 @@ import ResponsiveImage from './ResponsiveImage.astro';
         />
       </div>
       <div class="text-content">
-        <h2>About Me</h2>
+        <h2 class="title">About Me</h2>
         <p>Hey! I'm TiBO, a freedom-loving creative who takes exploration a bit too seriously. I created Ukulele Flow to share the art of connecting Feelings to Music and Music to Feelings. <br>
         My mission is to help you unlock those musical skills, not for performance, not for playing songs, but rather for the sake of mindful exploration and authentic expression.</p>
       </div>
@@ -43,12 +43,13 @@ import ResponsiveImage from './ResponsiveImage.astro';
     aspect-ratio: 4/3;
   }
 
-  h2 {
+  .title {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     background: var(--orange-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-align: left;
   }
 
   p {
@@ -68,7 +69,7 @@ import ResponsiveImage from './ResponsiveImage.astro';
       margin: 0 auto;
     }
 
-    h2 {
+    .title {
       font-size: 2rem;
     }
   }
