@@ -47,7 +47,7 @@ const steps = [
 
 <style>
   .featured-notes {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 4rem; /* Added bottom padding of 4rem */
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
   }
 
@@ -57,6 +57,7 @@ const steps = [
     gap: 1.5rem;
   }
 
+  /* Rest of the styles remain unchanged */
   .note-card {
     background: rgba(255, 255, 255, 0.03);
     padding: 1.5rem;
@@ -137,6 +138,10 @@ const steps = [
   }
 
   @media (max-width: 640px) {
+    .featured-notes {
+      padding: 0.5rem 0 3rem; /* Slightly reduced padding on mobile */
+    }
+    
     .process-grid {
       grid-template-columns: 1fr;
       gap: 1rem;
