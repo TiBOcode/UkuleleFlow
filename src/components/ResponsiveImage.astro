@@ -1,0 +1,33 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+const { src, alt, className = '' } = Astro.props;
+---
+
+<div class={`image-container ${className}`}>
+  <img src={src} alt={alt} class="responsive-image" />
+</div>
+
+<style>
+  .image-container {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .image-container:hover .responsive-image {
+    transform: scale(1.05);
+  }
+</style>
