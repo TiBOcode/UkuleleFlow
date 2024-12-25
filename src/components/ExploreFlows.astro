@@ -8,7 +8,9 @@ import YouTubePlaylist from './YouTubePlaylist.astro';
     <h2>Explore the Flows</h2>
     <p class="subtitle">Watch, Learn and Play Along with Me</p>
     
-    <YouTubePlaylist playlistId={UKULELE_FLOWS_PLAYLIST} title="Ukulele Flows by TiBO" />
+    <div class="playlist-wrapper">
+      <YouTubePlaylist playlistId={UKULELE_FLOWS_PLAYLIST} title="Ukulele Flows by TiBO" />
+    </div>
     
     <div class="cta-container">
       <a href="https://www.youtube.com/@TiBO_Uke" class="youtube-cta" target="_blank" rel="noopener noreferrer">
@@ -43,6 +45,11 @@ import YouTubePlaylist from './YouTubePlaylist.astro';
     margin-bottom: 2rem;
   }
 
+  .playlist-wrapper {
+    max-width: 70%; /* Reduced from 100% to 70% */
+    margin: 0 auto;
+  }
+
   .cta-container {
     display: flex;
     justify-content: center;
@@ -70,5 +77,11 @@ import YouTubePlaylist from './YouTubePlaylist.astro';
   .youtube-cta svg {
     width: 24px;
     height: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .playlist-wrapper {
+      max-width: 100%;
+    }
   }
 </style>
