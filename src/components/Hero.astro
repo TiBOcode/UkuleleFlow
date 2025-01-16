@@ -12,6 +12,14 @@
       <p>
         Ukulele Improvisation Techniques to Enjoy & Learn Music with Feelings
       </p>
+      <div class="cta-buttons">
+        <a href="#lesson-highlight" class="cta-button primary">
+          Start Your Journey
+        </a>
+        <a href="/notes" class="cta-button secondary">
+          Explore the Blog
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -49,7 +57,7 @@
   }
 
   .bio h2 {
-    font-size: 2rem; /* Reduced from 2.3rem to 2rem */
+    font-size: 2rem;
     margin-bottom: 1rem;
     background: var(--orange-gradient);
     -webkit-background-clip: text;
@@ -57,9 +65,52 @@
   }
 
   .bio p {
-    font-size: 1rem; /* Reduced from 1.1rem to 1rem */
+    font-size: 1rem;
     color: var(--text-secondary);
     max-width: 600px;
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+  }
+
+  .cta-button.primary {
+    background: var(--orange-gradient);
+    color: white;
+  }
+
+  .cta-button.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .cta-button.primary:hover {
+    box-shadow: 0 4px 12px rgba(255, 87, 51, 0.25);
+  }
+
+  .cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
   }
 
   @media (max-width: 768px) {
@@ -75,6 +126,20 @@
 
     .bio {
       padding: 1rem;
+    }
+
+    .bio p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      justify-content: center;
+    }
+
+    .cta-button {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
     }
   }
 </style>
