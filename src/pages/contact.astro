@@ -1,10 +1,296 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContactFormLessonsSection from '../components/ContactFormLessonsSection.astro';
 ---
 
 <Layout title="Contact | TiBO">
   <main>
-    <ContactFormLessonsSection />
+  <section class="contact-section">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p class="subtitle"> I'll come back to you so that we can schedule a moment together! <br></p>
+    <form name="ukulele-lesson" netlify netlify-honeypot="bot-field" class="lesson-form" action="/success">
+  <h2>Book Your Ukulele Flow Session</h2>
+  <p class="form-description">Take the first step towards creative musical expression</p>
+  
+  <p class="hidden">
+    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+  </p>
+  
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required placeholder="Your name" />
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required placeholder="Your email" />
+  </div>
+
+  <div class="form-group">
+    <label>Your Current Level</label>
+    <div class="level-options">
+      <div class="level-option">
+        <input type="radio" id="beginner" name="level" value="beginner" required />
+        <label for="beginner">Beginner</label>
+      </div>
+      <div class="level-option">
+        <input type="radio" id="intermediate" name="level" value="intermediate" />
+        <label for="intermediate">Intermediate</label>
+      </div>
+      <div class="level-option">
+        <input type="radio" id="advanced" name="level" value="advanced" />
+        <label for="advanced">Advanced</label>
+      </div>
+      <div class="level-option">
+        <input type="radio" id="professional" name="level" value="professional" />
+        <label for="professional">Professional</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="message">Anything you would like me to know about you?</label>
+    <textarea 
+      id="message" 
+      name="message" 
+      rows="5" 
+      required 
+      placeholder="Share your musical goals and any specific areas you'd like to explore..."
+    ></textarea>
+  </div>
+  
+  <div class="form-group">
+    <div class="level-options">
+      <div class="level-option">
+        <input type="checkbox" id="first-time" name="first-time" value="yes" />
+        <label for="first-time">It's my first session <br><em>Discount 33% off: 20€ instead of 30€<br> Limited offer until January31th</em></label>
+      </div>
+    </div>
+  </div>
+  
+  <button type="submit" class="submit-button">Book Your Session</button>
+</form>
+
+<style>
+.lesson-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background: var(--orange-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-description {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FF5733;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+/* Level and Checkbox Styling */
+.level-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.level-option {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.level-option input[type="radio"],
+.level-option input[type="checkbox"] {
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid var(--text-secondary);
+  border-radius: 50%;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.level-option input[type="checkbox"] {
+  border-radius: 0.25rem; /* Square shape for checkboxes */
+}
+
+.level-option input[type="radio"]:before,
+.level-option input[type="checkbox"]:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--orange-gradient);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.level-option input[type="checkbox"]:before {
+  border-radius: 0.25rem; /* Adjust for square checkbox */
+}
+
+.level-option input[type="radio"]:checked:before,
+.level-option input[type="checkbox"]:checked:before {
+  transform: scale(0.8);
+}
+
+.level-option input[type="radio"]:checked,
+.level-option input[type="checkbox"]:checked {
+  border-color: #FF5733;
+  box-shadow: 0 0 12px rgba(255, 87, 51, 0.25);
+}
+
+.level-option input[type="radio"]:hover,
+.level-option input[type="checkbox"]:hover {
+  border-color: #FF5733;
+}
+
+.level-option label {
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  margin: 0;
+}
+
+.level-option input[type="radio"]:checked + label,
+.level-option input[type="checkbox"]:checked + label {
+  color: var(--text-primary);
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--orange-gradient);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 51, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .lesson-form {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .level-options {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .level-option {
+    flex: 1 1 40%;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .level-options {
+    gap: 1rem;
+  }
+  
+  .level-option {
+    flex: 1 1 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+}
+</style>
+
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    background: var(--orange-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+</style>
   </main>
 </Layout>
