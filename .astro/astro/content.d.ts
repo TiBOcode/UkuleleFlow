@@ -188,6 +188,13 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
+"broken-chords.md": {
+	id: "broken-chords.md";
+  slug: "broken-chords";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
 "drone-bass.md": {
 	id: "drone-bass.md";
   slug: "drone-bass";
@@ -205,6 +212,13 @@ declare module 'astro:content' {
 "least-effort-possible.md": {
 	id: "least-effort-possible.md";
   slug: "least-effort-possible";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
+"less-is-more.md": {
+	id: "less-is-more.md";
+  slug: "less-is-more";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
