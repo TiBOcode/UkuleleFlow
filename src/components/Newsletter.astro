@@ -6,14 +6,16 @@
       <h2>Join the Ukulele Flow Newsletter</h2>
       <p>Get weekly insights about creative music-making, mindful practice techniques, and exclusive content directly in your inbox.</p>
       
-      <iframe
-        src="https://substack.com/@tiboflow"
-        width="100%"
-        height="320"
-        style="border:1px solid #EEE; background:transparent;"
-        frameborder="0"
-        scrolling="no"
-      ></iframe>
+      <div class="substack-embed">
+        <iframe
+          src="https://tiboflow.substack.com/embed"
+          width="100%"
+          height="320"
+          style="border:1px solid #EEE; background:transparent;"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -45,9 +47,15 @@
     line-height: 1.6;
   }
 
+  .substack-embed {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   iframe {
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
   }
 
   @media (max-width: 768px) {
